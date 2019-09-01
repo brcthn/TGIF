@@ -1,0 +1,82 @@
+body{
+    /* background-image: url(background.png) */
+
+}
+
+.logo{
+    width: 150px;
+    height: 150px;
+}
+.btn{
+    padding:2px;
+}
+.add{
+    margin:140px 150px 5px 150px;
+    text-align: center;
+    opacity: 0.5; 
+    border:1 px solid rgb(250, 242, 242);
+    background-color:rgb(223, 222, 222);
+  
+}
+.Congressmen{
+    float:left;
+    margin-top:50px;
+    margin-right:450px;
+}
+.Senators{
+    float:left;
+    margin-top:50px;
+    margin-right:450px; 
+}
+caption{
+    text-align:right;
+    caption-side: top;
+    color: rgb(63, 64, 65);
+    font-style: italic;
+}
+a{
+    text-decoration: none;
+   color:black;
+}
+
+/* .icon{
+    margin-left:1250px;
+}
+
+#email{
+    color:black;
+
+} */
+
+/* .Attendance{
+float:left;
+    margin-top:50px;
+    margin-right:450px; */
+
+ /* table, th, td{
+    border:1px solid black;
+} 
+.partytable{
+    background-color: aqua */
+
+    
+
+
+
+
+
+
+
+
+       
+    
+    
+    
+    
+      
+    
+    
+
+
+ 
+     

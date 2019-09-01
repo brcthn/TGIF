@@ -1,0 +1,123 @@
+  <!DOCTYPE html>
+  <html lang="en">
+
+  <head>
+      <meta charset="utf-8">
+      <meta http-equiv="X-UA-Compatible" content="IE=edge">
+      <meta name="viewport" content="width=device-width, initial-scale=1">
+      <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+          integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+      <link rel="stylesheet" href="home.css">
+  </head>
+
+  <body>
+      <header>
+
+          <!-- logo -->
+          <div class="row justify-content-between align-items-end first">
+              <div class="logo">
+                  <img src="logo option.png" class="logo">
+              </div>
+              <div class="col-xl-2 offset-xl-10 icon"> <img src="icon.png">
+                  <a id="email" href="mailto:info@tgif.net">info@tgif.net</a>
+              </div>
+          </div>
+          <!--navbar-->
+          <nav class="row  navbar bg-light navbar-expand-sm bg-dark navbar-dark ">
+              <ul class="navbar-nav">
+                  <li class="nav-item"><a href="home.html" class="nav-link">HOME</a>
+                  </li>
+                  <li class="nav-item dropdown">
+                      <a href="#" class="nav-link dropdown-toggle" id="congressmenu" data-toggle="dropdown"
+                          role="button" aria-haspopup="true" aria-expanded="false">Congress 113</a>
+                      <div class="dropdown-menu" aria-labelledby="congressmenu">
+                          <a href="house-data.html" class="dropdown-item">House </a>
+                          <div class="dropdown-divider"></div>
+                          <a href="#" class="dropdown-item">Senate </a>
+                      </div>
+                  </li>
+              </ul>
+          </nav>
+
+      </header>
+
+
+      <section>
+          <div class="row">
+              <div class="col-xl-10">
+                  <div class="Senators font-italic">
+                      <h2> Senators </h2>
+                      <p> First convened in 1789, the composition and powers of the Senate are established in Article
+                          One of the
+                          U.S. Constitution. Each state is represented by two senators, regardless of population, who
+                          serve
+                          staggered six-year terms. The Senate has several exclusive powers not granted to the House,
+                          including consenting to treaties as a precondition to their ratification and consenting to or
+                          confirming appointments of Cabinet secretaries, federal judges, other federal executive
+                          officials,
+                          military officers, regulatory officials, ambassadors, and other federal uniformed officers,
+                          as well as trial of federal officials impeached by the House.
+                      </p>
+                  </div>
+              </div>
+          </div>
+
+          <div class="row">
+              <div class="col-xl-6 font-italic ">
+                  <form>
+                      <input type="checkbox" name="party" value="Democrat" id="dCheckBox">Democrats
+                      <input type="checkbox" name="party" value=" Republican" id="rCheckBox">Repuclican
+                      <input type="checkbox" name="party" value=" Independant" id="iCheckBox"> Independant
+                  </form>
+              </div>
+
+
+
+
+              <div class="col-xl-6 font-italic ">
+                  <span>Filter by State:</span>
+                  <select name="state" id="stateSelect" onchange="getSelectValue();">
+                      <option value="all">All States</option>
+                  </select>
+              </div>
+
+          </div>
+
+          <div class="row">
+              <div class="col-xl-12">
+                  <table id="senate-data" class="table table-hover">
+
+                      <tbody>
+                      </tbody>
+                  </table>
+              </div>
+          </div>
+
+
+      </section>
+      <footer>
+
+          <div class="add font-italic">
+              <a>2016 TGIF | All Rights Reserved</a>
+          </div>
+
+      </footer>
+
+
+      <!-- <script src="json/pro-congress-113-senate.js"></script> -->
+      <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+          integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+      </script>
+      <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+          integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+      </script>
+      <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+          integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+      </script>
+      <script>
+          var url = "https://api.propublica.org/congress/v1/113/senate/members.json";
+      </script>
+      <script src="senate.js"></script>
+  </body>
+
+  </html>
