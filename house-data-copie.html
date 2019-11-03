@@ -1,0 +1,97 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+  <meta charset="utf-8">
+  <meta http-equiv="X-UA-Compatible" content="IE=edge">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <link rel="stylesheet" href="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/css/bootstrap.min.css"
+    integrity="sha384-Gn5384xqQ1aoWXA+058RXPxPg6fy4IWvTNh0E263XmFcJlSAwiGgFAW/dAiS6JXm" crossorigin="anonymous">
+
+  <link rel="stylesheet" href="home.css">
+
+  <style>
+ 
+  </style>
+
+</head>
+
+<body>
+  <div id="app">
+    <div v-if='isLoading'>
+      Loading...
+    </div>
+    
+    <div v-else>
+       
+    <div id="checkbox">
+      <label>Democrats</label>
+      <input type="checkbox" value="D" v-model="party">
+    
+    <label>Independent</label>
+    <input type="checkbox" value="I" v-model="party">
+    <label>Republic</label>
+    <input type="checkbox" value="R" v-model="party">
+   </div>
+  
+    <!-- <p>{{party}}</p> -->
+   
+    <select v-model="state">
+      <option v-for="option in rows" v-bind:value="option.state">
+        {{ option.state }}
+      </option>
+    </select>
+
+    <table id="table">
+      <thead>
+        <tr>
+          <th>Name</th>
+          <th>Party</th>
+          <th>State</th>
+          <th>Seniority</th>
+          <th>%Votes w/ Party</th>
+        </tr>
+      </thead>
+      <tbody>
+
+
+        <!-- row in row yerine memberslar gelecek -->
+        <!-- memberslari burda bulup for ile scripteki rows icine atayacagiz. -->
+        <tr v-for="row in filter">
+          <td>{{row.first_name}}</td>
+          <td>{{row.party}}</td>
+          <td>{{row.state}}</td>
+          <td>{{row.seniority}}</td>
+          <td>{{row.votes_with_party_pct}}</td>
+        </tr>
+
+      </tbody>
+    </table>
+  </div>
+  </div>
+
+
+
+
+
+
+
+  <!-- <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script> -->
+  <script src="https://cdn.jsdelivr.net/npm/vue/dist/vue.js"></script>
+  <!-- <script src="json/pro-congress-113-house.js"></script> -->
+  <script src="vuejs.js"></script>
+  <script src="https://code.jquery.com/jquery-3.2.1.slim.min.js"
+    integrity="sha384-KJ3o2DKtIkvYIK3UENzmM7KCkRr/rE9/Qpg6aAZGJwFDMVNA/GpGFF93hXpG5KkN" crossorigin="anonymous">
+  </script>
+  <script src="https://cdnjs.cloudflare.com/ajax/libs/popper.js/1.12.9/umd/popper.min.js"
+    integrity="sha384-ApNbgh9B+Y1QKtv3Rn7W3mgPxhU9K/ScQsAP7hUibX39j7fakFPskvXusvfa0b4Q" crossorigin="anonymous">
+  </script>
+  <script src="https://maxcdn.bootstrapcdn.com/bootstrap/4.0.0/js/bootstrap.min.js"
+    integrity="sha384-JZR6Spejh4U02d8jOt6vLEHfe/JQGiRRSQQxSfFWpi1MquVdAyjUar5+76PVCmYl" crossorigin="anonymous">
+  </script>
+  <script>
+    var url = "https://api.propublica.org/congress/v1/113/house/members.json";
+  </script>
+
+
+</body>

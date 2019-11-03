@@ -110,7 +110,7 @@ function filterindependent() {
    }
    filter();
 }
-
+//members by party 
 function init() {
 
    var states = [];
@@ -127,7 +127,7 @@ function init() {
          justIndependent.push(members[i]);
       }
 
-      // states
+      // states sort alphabetical
       if (!states.includes(members[i].state)) {
          states.push(members[i].state);
       }
@@ -173,7 +173,7 @@ function filter() {
 
 
 //  dropdown filter
-function getSelectValue() {
+   function getSelectValue() {
    var selectvalue = document.getElementById("stateSelect").value;
    filterByState(selectvalue);
 

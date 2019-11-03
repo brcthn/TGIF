@@ -3,11 +3,9 @@ var totalDemocratVotes = 0
 var totalRepublicVotes = 0
 var totalIndependentVotes = 0
 
-
 var democratparty = [];
 var republicparty = [];
 var independentpary = [];
-
 
 var avaragedemocrats = 0;
 var avaragerepublic = 0;
@@ -16,22 +14,47 @@ var avaregetotal = 0;
 
 var missedVotespct10 = [];
 var votesPartypct10 = [];
+var data;
+fetch(url, {
+   headers: {
+      "X-API-Key": "Tr0223Du2MQC0zZPyIpBXlPauf2inxnDQSMhXat8"
+   }
+}).then(function (data) {
+   return data.json();
+}).then(function (apiData) {
+   data = apiData;
+   // members = data.results[0].members;
+   glance();
+   if (document.getElementById("mostEngaged") != null) {
+      engage(lowToHighMissed, "most");
+      engage(highToLowMissed, "least");
+   }
+      if (document.getElementById("mostLoyal") != null) {
+         loyal(lowToHighVotes, "mostLoyal")
+         loyal(highToLowVotes, "leastLoyal")
+      }
+   
 
-glance();
+
+})
+
+
+
+// glance();
 
 //attandence sayfasinda sadece engage calismasi lazim. 
 //Bu yuzden sayfanin attandance oldugunu kanitlamamiz lazum.
 //sayfada mostEngaged tablosu varsa bu kesin attandance dir. dolayisiyla varsa sadece engage calisir.
-if(document.getElementById("mostEngaged") != null){
+// if(document.getElementById("mostEngaged") != null){
 //Javascript'te methoda funtion gecirmeyi ogrendik
-   engage(lowToHighMissed, "most");
-   engage(highToLowMissed, "least");
-}
-if(document.getElementById("mostLoyal") != null){
+//    engage(lowToHighMissed, "most");
+//    engage(highToLowMissed, "least");
+// }
+// if(document.getElementById("mostLoyal") != null){
 //Javascript'te methoda funtion gecirmeyi ogrendik
-   loyal(lowToHighVotes, "mostLoyal")
-   loyal(highToLowVotes, "leastLoyal")
-}
+//    loyal(lowToHighVotes, "mostLoyal")
+//    loyal(highToLowVotes, "leastLoyal")
+// }
 
 
 function glance() {
@@ -141,7 +164,7 @@ function engage(comparator, tableName) {
          document.getElementById("leastEngaged").appendChild(row);
       }
    }
-    missedVotespct10 = [];
+   missedVotespct10 = [];
 }
 
 // low to high function.siralama fonksiyonu kucukten buyuge
