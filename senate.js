@@ -19,8 +19,6 @@ fetch(url, {
 })
 
 
-
-
 function tablefill(tabledata) {
 
    // clear in the table.Because there are all members name.tablonun icini bosaltir
@@ -39,7 +37,6 @@ function tablefill(tabledata) {
    }
    // fill with array in the table.tabloyu gelen array ile doldurur
    for (var i = 0; i < tabledata.length; i++) {
-
       var row = document.createElement("tr");
       for (var j = 0; j < 5; j++) {
          var col = document.createElement("td");
@@ -171,12 +168,10 @@ function filter() {
 
 }
 
-
 //  dropdown filter
    function getSelectValue() {
    var selectvalue = document.getElementById("stateSelect").value;
    filterByState(selectvalue);
-
 }
 
 function filterByState(text) {
@@ -192,10 +187,5 @@ function filterByState(text) {
       }
    }
    tablefill(members2)
-
    members2 = [];
-
 }
-
-
-

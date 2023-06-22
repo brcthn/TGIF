@@ -8,5 +8,4 @@ var  statistic={
     avaragerepublic:"0",
     avarageindependent:"0",
     avaregetotal:"0"
-    
  }

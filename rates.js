@@ -33,12 +33,7 @@ fetch(url, {
          loyal(lowToHighVotes, "mostLoyal")
          loyal(highToLowVotes, "leastLoyal")
       }
-   
-
-
 })
-
-
 
 // glance();
 
@@ -71,12 +66,8 @@ function glance() {
          independentpary.push(data.results[0].members[i].party);
          totalIndependentVotes = totalIndependentVotes + (data.results[0].members[i].votes_with_party_pct);
       }
-
       avaregetotal = avaregetotal + data.results[0].members[i].votes_with_party_pct;
-
    }
-
-
    statistic.numberofdemocrats = democratparty.length
    statistic.numberofrepublic = republicparty.length
    statistic.numberofindependent = independentpary.length
@@ -236,15 +227,7 @@ function loyal(comparator, tableName) {
             row.appendChild(col);
          }
          document.getElementById("leastLoyal").appendChild(row);
-
       }
    }
-
    votesPartypct10 = [];
-
 }
-
-
-
-
-
